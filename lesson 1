@@ -1,0 +1,7 @@
+# first line of code.
+print("Hello World")
+
+# intiger, atring and conversion
+
+number = 12
+string = "A String"
