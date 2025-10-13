@@ -1,0 +1,39 @@
+# first line of code.
+print("Hello World")
+#command print , will print out everything
+
+#-------------------------------------------------------
+#before starting this part, read lesson one pdf for variable explenation and break down.
+#-------------------------------------------------------
+
+# we have three primary built-in numeric data types: 
+# intiger ( whole numbers )
+
+number = 12
+print("the number:",number)
+print("type of the number:" ,type(number))
+
+x = 100
+y = -500
+z = 0b1101 # Binary representation of 13
+
+print("the numbers x,y,z:" ,x,y,z)
+
+
+# float ( decimal numbers )
+
+float_number = -26.9
+print("the float number is",float_number)
+print("the float number type:",type(float_number))
+
+pi = 3.14159 # this is a rounded version of pi and not from the math library
+temperature = -273.15
+large_number = 1.23e5 # 1.23 * 10^5
+
+print("the large number ",large_number)
+print("type of pi:",type(pi))
+print("type of temperature:",type(temperature))
+print("type of large_number:",type(large_number))
+
+# complex numbers ( Expressed in the form a + bj, where a is the real part and b is the imaginary part. The imaginary part is denoted by j or J )
+
