@@ -15,5 +15,4 @@
 # opens gfg text file of the current directory
 f = open("file.txt")
 
-# specifying the full path
-f = open("C:\Users\Mobina\Desktop\Self-Study\GitHub\Python-Project-lesson-based\Files in python\Text.txt")
+f = open("file.txt", "rt")

@@ -228,6 +228,5 @@ print(json.dumps(True))
 print(json.dumps(False))
 print(json.dumps(None))
 
-import calculator
-n = input()
-print(isinstance(calculator.n()))
+print(x)
+print(json.dumps(x, indent=4))
