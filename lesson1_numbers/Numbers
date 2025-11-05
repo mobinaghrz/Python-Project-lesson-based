@@ -10,7 +10,7 @@ print("Hello World")
 # intiger ( whole numbers )
 
 number = 12
-print("the number:",number)
+print("the number:",number) # Tthe first part is called string, which will ba covered in lesson 2 
 print("type of the number:" ,type(number))
 
 x = 100
@@ -37,3 +37,13 @@ print("type of large_number:",type(large_number))
 
 # complex numbers ( Expressed in the form a + bj, where a is the real part and b is the imaginary part. The imaginary part is denoted by j or J )
 
+# An alternative way to initialize complex numbers"
+
+# Initializing complex number
+z = 5+3j
+# Print the parts of Complex No.
+print("The real part of complex number is : ", end="")
+print(z.real)
+
+print("The imaginary part of complex number is : ", end="")
+print(z.imag)

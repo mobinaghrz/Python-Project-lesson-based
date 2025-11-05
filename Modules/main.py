@@ -229,4 +229,22 @@ print(json.dumps(False))
 print(json.dumps(None))
 
 print(x)
+# use four indents to make it easier to read the result:
+
 print(json.dumps(x, indent=4))
+
+
+
+
+#jason checker
+
+# file handeling with jason
+
+# Exercise 3: Read and Write JSON to a File
+# Create a Python dictionary.
+# Open a file named data.json in write mode ('w').
+# Use json.dump() to write the dictionary to the file in JSON format.
+# Close the file.
+# Open data.json in read mode ('r').
+# Use json.load() to read the JSON data from the file into a Python dictionary.
+# Print the loaded dictionary.
