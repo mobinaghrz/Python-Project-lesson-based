@@ -112,17 +112,17 @@ f = open("Text.txt", "rt")
 # Example
 # Check if file exists, then delete it:
 
-import os
+# import os
 
-if os.path.exists("myfile.txt"):
-  os.remove("myfile.txt")
-else:
-  print("The file does not exist")
+# if os.path.exists("myfile.txt"):
+#   os.remove("myfile.txt")
+# else:
+#   print("The file does not exist")
 
-# create / delete file
-import os
-# os.mkdir("myfolder")
-os.rmdir("myfolder")
+# # create / delete file
+# import os
+# # os.mkdir("myfolder")
+# os.rmdir("myfolder")
 
 
 
@@ -146,25 +146,23 @@ os.rmdir("myfolder")
 # Reading from a CSV file is done using the reader object. The CSV file is opened as a text file with Python’s built-in open() function, which returns a file object. In this example, we first open the CSV file in READ mode, file object is converted to csv.reader object and further operation takes place. Code and detailed explanation is given below.
 
 
-# import csv
+import json
 
-# filename = "aapl.csv"  # File name
-# fields = []  # Column names
-# rows = []    # Data rows
+# Data to write
+my_data = {
+    "products": [
+        {"id": 1, "name": "Laptop", "price": 1200},
+        {"id": 2, "name": "Mouse", "price": 25}
+    ]
+}
 
-# with open(filename, 'r') as csvfile:
-#     csvreader = csv.reader(csvfile)  # Reader object
+# Write to file
+with open('data.json', 'w') as f:
+    json.dump(my_data, f, indent=4)
 
-#     fields = next(csvreader)  # Read header
-#     for row in csvreader:     # Read rows
-#         rows.append(row)
+# Read from file
+with open('data.json', 'r') as f:
+    loaded_data = json.load(f)
 
-#     print("Total no. of rows: %d" % csvreader.line_num)  # Row count
-
-# print('Field names are: ' + ', '.join(fields))
-
-# print('\nFirst 5 rows are:\n')
-# for row in rows[:5]:
-#     for col in row:
-#         print("%10s" % col, end=" ")
-#     print('\n')
+print(loaded_data)
+print(loaded_data['products'][0]['name'])
