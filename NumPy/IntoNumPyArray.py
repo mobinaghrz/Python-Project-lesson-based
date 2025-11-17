@@ -79,14 +79,21 @@ arr = np.array([[-1, 2, 0, 4],
 # Slicing: Just like lists in Python, NumPy arrays can be sliced. As arrays can be multidimensional,
 #  you need to specify a slice for each dimension of the array.
 
+
 arr2 = arr[:2, ::2]
 print ("first 2 rows and alternate columns(0 and 2):\n", arr2)
  
-# Printing elements at
-# specific Indices
+# Printing elements at specific Indices
+# Advanced Indexing: Advanced Indexing in NumPy provides more flexible ways to access and manipulate array elements.
+
 arr3 = arr[[1, 1, 0, 3], 
-                [3, 2, 1, 0]]
+           [3, 2, 1, 0]]
+
 print ("\nElements at indices (1, 3), "
     "(1, 2), (0, 1), (3, 0):\n", arr3)
+
+# boolean array indexing 
+cond = arr > 0
+print ("\nElements greater than 0:\n", arr[cond])
 
 print("-----------------------------------------\n")

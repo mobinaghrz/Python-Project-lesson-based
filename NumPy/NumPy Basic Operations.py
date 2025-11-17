@@ -13,7 +13,7 @@ import numpy as np
 
 print("Basic Array Operations\n")
 
-x = np.array([1, 2, 3])
+x = np.array([[1, 2, 3],[3,4,8]])
 y = np.array([4, 5, 6])
 
 # Addition
