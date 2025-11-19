@@ -97,3 +97,29 @@ cond = arr > 0
 print ("\nElements greater than 0:\n", arr[cond])
 
 print("-----------------------------------------\n")
+
+# Data Types in Numpy
+# # Every Numpy array is a table of elements (usually numbers), all of the same type, indexed by a tuple of positive integers.
+#  Every ndarray has an associated data type (dtype) object. This data type object (dtype) provides information about the layout of the array.
+#  The values of an ndarray are stored in a buffer which can be thought of as a contiguous block of memory bytes which can be interpreted 
+# by the dtype object. Numpy provides a large set of numeric datatypes that can be used to construct arrays. At the time of Array creation,
+#  Numpy tries to guess a datatype, but functions that construct arrays usually also include 
+# an optional argument to explicitly specify the datatype.
+
+# Constructing a Datatype Object
+# In Numpy, datatypes of Arrays need not to be defined unless a specific datatype is required.
+# Numpy tries to guess the datatype for Arrays which are not predefined in the constructor function.
+
+import numpy as np
+ 
+# Integer datatype
+x = np.array([1, 2])  
+print(x.dtype)         
+ 
+# Float datatype
+x = np.array([1.0, 2.0]) 
+print(x.dtype)  
+ 
+# Forced Datatype
+x = np.array([1, 2], dtype = np.int64)   
+print(x.dtype)

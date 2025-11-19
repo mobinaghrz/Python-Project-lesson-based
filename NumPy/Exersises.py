@@ -88,3 +88,22 @@ print ("\nSum of all array elements: ", a.sum())
 # Adding two arrays
 # Performing Binary operations
 print ("\nArray sum:\n", a + b)
+
+
+# Use any of these for an unarray operation
+arr = np.array([-4, -1, 0, 1, 4])
+print(np.sqrt(arr) ) #nan = not a number
+print(np.square(arr))
+print(np.exp(arr))
+print(np.log(arr) )
+print(np.negative(arr) )
+
+
+# Applying a binary operation calculator 
+
+
+# Ufunc and sort
+import numpy as np
+
+"""
+EXERCISE: Student Grade Analysis
