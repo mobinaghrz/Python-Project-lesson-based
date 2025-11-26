@@ -25,3 +25,5 @@ print("\nColumn stacking:\n", np.column_stack((a, c)))
 
 # concatenation method 
 print("\nConcatenating to 2nd axis:\n", np.concatenate((a, b), 1))
+
+
