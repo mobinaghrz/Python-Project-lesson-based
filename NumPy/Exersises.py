@@ -347,3 +347,203 @@ print("SUMMARY REPORT")
 print("="*60)
 for i in range(len(bonuses)):
     print(f"Salesperson {i}: Total=${total_sales[i]:.1f}k → Bonus=${bonuses[i]:.2f}k")
+
+
+
+# NumPy Arrays Exercise: Student Grade Analysis System
+
+# Scenario:
+# You are a teaching assistant managing student grades for a course. 
+# You need to analyze exam scores using NumPy arrays and perform various data manipulations.
+
+import numpy as np
+
+# ==================== PART 1: Array Creation and Data Types ====================
+
+# 1. Create a 2D NumPy array called 'exam_scores' with dtype float64 containing:
+#    - Row 1: Student 1's scores: [85, 92, 78, 88]
+#    - Row 2: Student 2's scores: [90, 85, 95, 87]
+#    - Row 3: Student 3's scores: [78, 88, 82, 91]
+#    - Row 4: Student 4's scores: [92, 79, 85, 90]
+
+# SOLUTION:
+exam_scores = np.array([[85, 92, 78, 88],
+                        [90, 85, 95, 87],
+                        [78, 88, 82, 91],
+                        [92, 79, 85, 90]], dtype=np.float64)
+
+print("Exam Scores Array:")
+print(exam_scores)
+print()
+
+
+# 2. Print the following information about your array:
+#    - The dtype of the array
+#    - The shape of the array
+#    - The byte order
+#    - The itemsize (size of each element in bytes)
+
+# SOLUTION:
+print("Array Information:")
+print(f"Data type (dtype): {exam_scores.dtype}")
+print(f"Shape: {exam_scores.shape}")
+print(f"Byte order: {exam_scores.dtype.byteorder}")
+print(f"Item size (bytes): {exam_scores.dtype.itemsize}")
+print()
+
+
+# ==================== PART 2: Mathematical Operations ====================
+
+# 3. Create a second array called 'bonus_points' with dtype int32:
+#    [[5, 3, 2, 4],
+#     [4, 5, 3, 2],
+#     [3, 2, 5, 4],
+#     [2, 4, 3, 5]]
+
+# SOLUTION:
+bonus_points = np.array([[5, 3, 2, 4],
+                         [4, 5, 3, 2],
+                         [3, 2, 5, 4],
+                         [2, 4, 3, 5]], dtype=np.int32)
+
+print("Bonus Points Array:")
+print(bonus_points)
+print()
+
+
+# 4. Add the bonus points to the exam scores (element-wise addition) 
+#    and store the result in a new array called 'final_scores'.
+
+# SOLUTION:
+final_scores = np.add(exam_scores, bonus_points)
+# Alternative: final_scores = exam_scores + bonus_points
+
+print("Final Scores (with bonus):")
+print(final_scores)
+print()
+
+
+# 5. Calculate and print:
+#    - The total points earned by each student (sum across each row)
+#    - The average score for each exam (mean down each column)
+#    - The overall class average (mean of all scores)
+
+# SOLUTION:
+student_totals = np.sum(final_scores, axis=1)
+exam_averages = np.mean(final_scores, axis=0)
+class_average = np.mean(final_scores)
+
+print("Total points per student:")
+print(student_totals)
+print()
+
+print("Average score per exam:")
+print(exam_averages)
+print()
+
+print(f"Overall class average: {class_average:.2f}")
+print()
+
+
+# ==================== PART 3: Advanced Analysis ====================
+
+# 6. Calculate the standard deviation of each student's scores 
+#    (hint: use np.std() with axis=1).
+
+# SOLUTION:
+student_std = np.std(final_scores, axis=1)
+
+print("Standard deviation of each student's scores:")
+print(student_std)
+print()
+
+
+# 7. Create a new array called 'normalized_scores' where each student's 
+#    scores are divided by that student's maximum score. 
+#    This normalizes everyone's best exam to 100%.
+
+# SOLUTION:
+student_max = np.max(final_scores, axis=1, keepdims=True)
+normalized_scores = final_scores / student_max
+
+print("Normalized scores (relative to each student's best exam):")
+print(normalized_scores)
+print()
+
+
+# 8. Find and print:
+#    - Which student (index)  has the highest total score
+#    - Which exam (index) was the hardest (lowest average)
+#    - The transpose of the 'final_scores' array
+
+# SOLUTION:
+best_student_idx = np.argmax(student_totals)
+hardest_exam_idx = np.argmin(exam_averages)
+transposed_scores = final_scores.T
+# Alternative: transposed_scores = np.transpose(final_scores)
+
+print(f"Student with highest total score: Student {best_student_idx + 1} (index {best_student_idx})")
+print(f"Total score: {student_totals[best_student_idx]:.2f}")
+print()
+
+print(f"Hardest exam: Exam {hardest_exam_idx + 1} (index {hardest_exam_idx})")
+print(f"Average score: {exam_averages[hardest_exam_idx]:.2f}")
+print()
+
+print("Transposed final scores (exams as rows, students as columns):")
+print(transposed_scores)
+print()
+
+
+# ==================== PART 4: Data Type Challenges (BONUS) ====================
+
+# 9. Create a structured dtype that represents student records with fields:
+#    - 'name': string of length 20
+#    - 'id': 32-bit integer
+#    - 'gpa': 64-bit float
+
+# SOLUTION:
+student_dtype = np.dtype([('name', 'U20'), 
+                          ('id', 'i4'), 
+                          ('gpa', 'f8')])
+
+print("Structured dtype created:")
+print(student_dtype)
+print()
+
+
+# 10. Create an array using this structured dtype with data for 2 students:
+#     Student 1: name="Alice Johnson", id=12345, gpa=3.85
+#     Student 2: name="Bob Smith", id=67890, gpa=3.92
+#     Print the array.
+
+# SOLUTION:
+student_records = np.array([('Alice Johnson', 12345, 3.85),
+                           ('Bob Smith', 67890, 3.92)], 
+                          dtype=student_dtype)
+
+print("Student Records:")
+print(student_records)
+print()
+
+# Access individual fields
+print("Student names:", student_records['name'])
+print("Student IDs:", student_records['id'])
+print("Student GPAs:", student_records['gpa'])
+
+
+# ==================== Additional Demonstrations ====================
+
+# Demonstrating difference between type and dtype
+print("\n=== Bonus: Understanding type vs dtype ===")
+print(f"Type of exam_scores array: {type(exam_scores)}")
+print(f"Dtype of exam_scores array: {exam_scores.dtype}")
+print()
+
+# Demonstrating byte order with explicit specification
+print("=== Bonus: Big-endian vs Little-endian ===")
+big_endian_array = np.array([1, 2, 3], dtype='>i4')
+little_endian_array = np.array([1, 2, 3], dtype='<i4')
+
+print(f"Big-endian byte order: {big_endian_array.dtype.byteorder}")
+print(f"Little-endian byte order: {little_endian_array.dtype.byteorder}")
