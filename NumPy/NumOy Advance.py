@@ -13,7 +13,7 @@ b = np.array([[5, 6],
               [7, 8]])
 
 # vertical stacking
-print("\nVertical stacking:\n", np.vstack((a, b)))
+print("Vertical stacking:\n", np.vstack((a, b)))
 
 # horizontal stacking
 print("\nHorizontal stacking:\n", np.hstack((a, b)))
