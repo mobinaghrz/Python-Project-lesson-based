@@ -299,7 +299,6 @@ Trans_arr = arr1.T
 print(Trans_arr)
 
 # Data type Object (dtype) in NumPy Python
-# Last Updated : 11 Aug, 2021
 # Every ndarray has an associated data type (dtype) object. This data type object (dtype) informs us about the layout of the array. 
 # This means it gives us information about: 
 
