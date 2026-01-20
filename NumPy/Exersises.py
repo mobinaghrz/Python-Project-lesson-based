@@ -107,7 +107,6 @@ import numpy as np
 
 """
 EXERCISE: Student Grade Analysis
-=================================
 
 You're analyzing test scores for a class of students. Each student took 3 tests.
 
@@ -212,7 +211,6 @@ for idx in top_3_indices:
 
 """
 HOMEWORK: Monthly Sales Performance Analysis
-=============================================
 
 You're analyzing sales data for 6 salespeople over 4 months (Jan-Apr).
 Each row represents a salesperson, each column represents a month.
