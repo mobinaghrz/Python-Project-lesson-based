@@ -124,6 +124,7 @@ print(x.dtype)
 x = np.array([1, 2], dtype = np.int64)   
 print(x.dtype)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 # Python NumPy
@@ -365,3 +366,5 @@ print("type is: ",type(a))
 print("dtype is: ",a.dtype)
 =======
 >>>>>>> cf2b4d87c5c8c884ceb768e9f3fe4086096d9421
+=======
+>>>>>>> 2dd9c4b8dc5bddab03eb507d7105d2356f64bf7f
