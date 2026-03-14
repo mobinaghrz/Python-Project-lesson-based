@@ -30,5 +30,5 @@ print(StringNumber + StrNumb)
 #------------------Operation on String-----------------------
 # Multiplication: if You want to print a string a certain amount of time:
 print("Hello World "*4)
-StrVar = "Hiii :D"
+StrVar = "Hiii :D "
 print(3*StrVar)

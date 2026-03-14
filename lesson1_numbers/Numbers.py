@@ -49,5 +49,3 @@ print("The imaginary part of complex number is : ", end="")
 print(z.imag)
 
 
-import math
-print(math.pi)
